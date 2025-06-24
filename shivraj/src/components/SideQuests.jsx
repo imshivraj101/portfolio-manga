@@ -1,3 +1,4 @@
+// src/components/SideQuests.jsx
 import './SideQuests.css';
 import { FiExternalLink } from 'react-icons/fi';
 import tedxLogo from '../assets/orgs/tedx.png';
@@ -64,10 +65,9 @@ export default function SideQuests() {
         ))}
       </div>
 
-      <div className="explore-container">
-        <button className="explore-button">
-          Explore All Side Quests <FiExternalLink className="explore-icon" />
-        </button>
+      <div className="sidequest-explore-container">
+        <p className="sidequest-explore-text">Explore All Side Quests…</p>
+        <span className="sidequest-explore-icon"><FiExternalLink /></span>
       </div>
     </section>
   );

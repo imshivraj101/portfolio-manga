@@ -25,19 +25,16 @@
   align-items: center;
 }
 
-/* Wrapper to maintain consistent width */
 .quest-wrapper {
   position: relative;
   width: 950px;
   max-width: 95%;
   margin: 0 auto;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Logo outside card */
 .quest-logo-wrap {
   position: absolute;
   left: -100px;
@@ -56,7 +53,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Card design */
 .quest-card {
   position: relative;
   display: flex;
@@ -75,7 +71,6 @@
   transform: translateY(-5px);
 }
 
-/* Top-right external link icon */
 .quest-float-icon {
   position: absolute;
   top: 12px;
@@ -99,7 +94,6 @@
   background-color: #f5c518;
 }
 
-/* Card content */
 .quest-header h3 {
   font-family: 'MochiyPopOne', sans-serif;
   font-size: 1.5rem;
@@ -130,35 +124,36 @@
   color: #222;
   line-height: 1.4rem;
 }
-
-/* Explore All Button */
-.explore-container {
+.sidequest-explore-container {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
 }
 
-.explore-button {
-  background-color: transparent;
+.sidequest-explore-text {
+  font-weight: 500;
   color: white;
-  border: 1px solid white;
-  padding: 0.6rem 1.2rem;
   font-size: 1rem;
+  font-family: 'MochiyPopOne', sans-serif;
+}
+
+.sidequest-explore-icon {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  border-radius: 2rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: 500;
+  justify-content: center;
+  font-size: 1.1rem;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 0.4rem;
+  border: 1px solid white;
+  transition: transform 0.2s ease;
 }
 
-.explore-button:hover {
+.sidequest-explore-icon:hover {
   background-color: #f5c518;
   color: black;
   border-color: #f5c518;
-}
-
-.explore-icon {
-  font-size: 1rem;
 }

@@ -2,7 +2,6 @@
 import './Outlooks.css';
 import blog1Thumb from "../assets/blogs/stoicism.jpeg";
 import blog2Thumb from "../assets/blogs/product.png";
-
 import { FiExternalLink } from 'react-icons/fi';
 
 const blogs = [
@@ -47,9 +46,9 @@ export default function Outlooks() {
           ))}
         </div>
 
-        <div className="explore-container">
-          <p className="explore-more">Explore All Blogs…</p>
-          <span className="explore-icon"><FiExternalLink /></span>
+        <div className="outlook-explore-container">
+          <p className="outlook-explore-text">Explore All Blogs…</p>
+          <span className="outlook-explore-icon"><FiExternalLink /></span>
         </div>
       </div>
     </section>
