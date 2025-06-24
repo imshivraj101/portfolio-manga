@@ -1,34 +1,68 @@
 @font-face {
   font-family: 'MochiyPopOne';
- src: url('../assets/fonts/Mochiy_Pop_One/MochiyPopOne-Regular.ttf');
-
+  src: url('../assets/fonts/Mochiy_Pop_One/MochiyPopOne-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   font-family: 'MochiyPopOne', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-
-
+/* ==== HERO SECTION ==== */
 .hero {
   position: relative;
   width: 100%;
+  height: 90vh;
   overflow: hidden;
+  box-sizing: border-box;
+  padding-right: 3rem; /* ensures icons don't overflow on right */
 }
+
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image: url('../assets/bg.png');
-  background-size: 80%;
+  background-size: 100%;
   background-position: center;
+  background-repeat: no-repeat;
   opacity: 0.75;
   z-index: 1;
 }
 
+/* ==== Floating Social Icons ==== */
+.hero-icons-floating {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 3;
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-icons-floating a {
+  color: black;
+  background-color: white;
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border: 2px solid black;
+  transition: transform 0.2s ease;
+}
+
+.hero-icons-floating a:hover {
+  transform: scale(1.2);
+  background-color: #f5c518;
+}
+
+/* ==== Content Area ==== */
 .hero-overlay {
   position: relative;
   z-index: 2;
@@ -39,46 +73,24 @@ body {
   color: white;
   gap: 3rem;
   flex-wrap: wrap;
+  height: 100%;
 }
 
 .hero-left .hero-avatar {
- margin: 10px;
   width: 370px;
   height: 450px;
   border-radius: 1.5rem;
   border: 2px solid black;
+  object-fit: cover;
+  margin: 10px;
+  margin-left: 300px;
 }
 
 .hero-right {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.hero-icons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-.hero-icons a {
-  color: black;
-  background-color: white;
-  padding: 0.4rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
-  border: 2px solid black;       /* 🔲 Add border */
-  margin-top: -2rem;             /* ⬆️ Slightly higher */
-}
-
-.hero-icons a:hover {
-  transform: scale(1.2);
-  background-color: #f5c518;
 }
 
 .hero-greet {
@@ -92,11 +104,48 @@ body {
   font-size: 3.5rem;
   margin: 0.5rem 0;
   font-weight: bold;
-  color:#222;
+  color: #222;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   color: #222;
   font-weight: 500;
+}
+
+/* ==== Responsive Fixes ==== */
+@media (max-width: 768px) {
+  .hero-overlay {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-right {
+    align-items: center;
+  }
+
+  .hero-icons-floating {
+    top: 1rem;
+    right: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .hero-left .hero-avatar {
+    width: 280px;
+    height: 340px;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-greet {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
 }

@@ -1,0 +1,141 @@
+.outlooks-section {
+  position: relative;
+  padding: 4rem 3rem;
+  background-image: url('/src/assets/outlooks-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.outlooks-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 3rem;
+}
+
+.outlooks-title {
+  margin-left: 80rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: 'MochiyPopOne', sans-serif;
+  color: #111;
+}
+
+.outlooks-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.outlook-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff00;
+  color: #111;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+ 
+  transition: transform 0.2s ease;
+  padding: 10px;
+  border: 1px solid #111;
+}
+
+.outlook-card:hover {
+  transform: translateY(-5px);
+}
+
+.outlook-thumbnail {
+  width: 400px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: black;
+}
+
+.outlook-details {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.outlook-details h3 {
+  font-family: 'MochiyPopOne', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.outlook-subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.outlook-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0.5rem 0 1rem 0;
+  width: 80%;
+}
+
+.outlook-summary {
+  font-size: 0.95rem;
+  color: #222;
+  line-height: 1.4rem;
+}
+
+.outlook-float-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  z-index: 5;
+}
+
+.outlook-float-icon:hover {
+  transform: scale(1.1);
+  background-color: #f5c518;
+}
+
+.explore-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 2rem;
+}
+
+.explore-more {
+  text-align: center;
+  font-weight: 500;
+  color: #111;
+  font-size: 1rem;
+}
+
+.explore-icon {
+  font-size: 1.2rem;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.3rem;
+  transition: transform 0.2s ease;
+}
+
+.explore-icon:hover {
+  transform: scale(1.2);
+  background-color: #f5c518;
+}
