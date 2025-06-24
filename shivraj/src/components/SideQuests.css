@@ -1,0 +1,83 @@
+.sidequests-section {
+  background-color: #111;
+  color: white;
+  padding: 4rem 3rem;
+}
+
+.sidequests-title {
+  font-size: 2.5rem;
+  font-family: 'MochiyPopOne', sans-serif;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.quests-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.quest-card {
+  position: relative;
+  display: flex;
+  background-color: white;
+  color: #111;
+  border-radius: 1rem;
+  padding: 2rem;
+  padding-left: 5rem; /* Leave space for the floating logo */
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.quest-card:hover {
+  transform: translateY(-5px);
+}
+
+.quest-logo {
+  position: absolute;
+  top: 50%;
+  left: -120px; /* Adjust based on size */
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white;
+  border: 3px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.quest-header h3 {
+  font-family: 'MochiyPopOne', sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.quest-role {
+  display: block;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.quest-duration {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.quest-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.quest-description {
+  font-size: 0.95rem;
+  color: #222;
+  line-height: 1.4rem;
+}

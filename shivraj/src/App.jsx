@@ -1,6 +1,7 @@
 import Hero from './components/Hero'
 import Ideas from './components/Ideas'
 import Navbar from './components/Navbar'
+import SideQuests from './components/SideQuests'
 import Traits from './components/Traits'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <Traits />
       <Ideas />
+      <SideQuests />
     </>
   )
 }
