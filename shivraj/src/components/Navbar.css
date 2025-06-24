@@ -1,0 +1,52 @@
+/* Navbar.css */
+*{
+  box-sizing: border-box;
+}
+/* 1. Font Import — use only once in global CSS (index.css ideally) */
+@font-face {
+  font-family: 'MochiyPopOne';
+  src: url('/src/assets/fonts/Mochiy_Pop_One/MochiyPopOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. Base Navbar Layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #111;
+  color: white;
+  font-family: 'MochiyPopOne', sans-serif;
+}
+
+/* 3. Left (Links) */
+.navbar-left {
+  display: flex;
+  gap: 1rem;
+}
+.navbar-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-size: 0.95rem;
+ border: 2px solid white;
+
+}
+
+.navbar-left a:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+
+/* 4. Right (Title) */
+.navbar-right h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}

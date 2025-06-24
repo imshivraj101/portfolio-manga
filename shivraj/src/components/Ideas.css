@@ -1,0 +1,72 @@
+.ideas-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  font-family: 'MochiyPopOne', sans-serif;
+}
+
+.ideas-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.idea-card {
+  display: flex;
+  gap: 1.5rem;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.idea-img {
+  width: 280px;
+  height: auto;
+  border-radius: 1rem;
+  border: 2px solid #000;
+}
+
+.idea-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.idea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.idea-header h3 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.icon-link {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.idea-role {
+  font-weight: 600;
+  color: #000;
+}
+
+.idea-desc {
+  font-weight: 500;
+  color: #222;
+  max-width: 500px;
+}
+
+.explore-more {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
