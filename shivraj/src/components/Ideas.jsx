@@ -1,27 +1,74 @@
-export default function FeaturedIdeas({ ideas = [] }) {
+import './Ideas.css';
+import { FiExternalLink } from 'react-icons/fi';
+
+import stoicThumb from '../assets/stoic.png';
+import travelThumb from '../assets/travel.jpg';
+
+const ideas = [
+  {
+    id: 1,
+    title: 'Stoiric',
+    role: 'UI/UX & Product Designer',
+    description:
+      'A daily companion to help you practice Stoic principles through tasks, quotes, and journaling.',
+    thumbnail: stoicThumb,
+    link: '#',
+  },
+  {
+    id: 2,
+    title: 'Travel-lore',
+    role: 'UI/UX & Product Designer',
+    description:
+      'Travel meets storytelling — share locations with memories and personal narratives.',
+    thumbnail: travelThumb,
+    link: '#',
+  },
+];
+
+export default function Ideas() {
   return (
     <section className="ideas-section">
-      <h2 className="ideas-title">Featured Ideas</h2>
+      <div className="ideas-overlay">
+        <h2 className="ideas-title">Ideas</h2>
 
-      {ideas.length === 0 ? (
-        <p>No featured ideas to show right now.</p>
-      ) : (
-        ideas.map((idea) => (
-          <div className="idea-card" key={idea._id}>
-            <img src={idea.imageUrl} alt={idea.title} className="idea-img" />
-            <div className="idea-content">
-              <div className="idea-header">
+        <div className="ideas-grid">
+          {ideas.map((idea) => (
+            <div className="idea-card" key={idea.id}>
+              {/* External icon pinned absolutely */}
+              <a
+  href={idea.link}
+  target="_blank"
+  rel="noreferrer"
+  className="idea-float-icon"
+>
+  <FiExternalLink />
+</a>
+
+              <img
+                src={idea.thumbnail}
+                alt={idea.title}
+                className="idea-thumbnail"
+              />
+              <div className="idea-details">
                 <h3>{idea.title}</h3>
-                <span className="icon-link">↗</span>
+                <p className="idea-role">Role: {idea.role}</p>
+                <hr className="idea-divider" />
+                <p className="idea-desc">{idea.description}</p>
               </div>
-              <p className="idea-role">Role: {idea.role}</p>
-              <p className="idea-desc">{idea.description}</p>
             </div>
-          </div>
-        ))
-      )}
+          ))}
+        </div>
 
-      <p className="explore-more">Explore All Projects… ↗</p>
+       <div className="explore-container">
+  <p className="explore-more">Explore All Projects…</p>
+  <span className="explore-icon">
+    <FiExternalLink />
+  </span>
+</div>
+
+</div>
+
+
     </section>
   );
 }
