@@ -1,74 +1,85 @@
 import './Ideas.css';
-import { FiExternalLink } from 'react-icons/fi';
+import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { supabase } from '../supabaseClient';
 
-import stoicThumb from '../assets/stoic.png';
-import travelThumb from '../assets/travel.jpg';
+export default function Ideas({ onlyRecent = false }) {
+  const [projects, setProjects] = useState([]);
 
-const ideas = [
-  {
-    id: 1,
-    title: 'Stoiric',
-    role: 'UI/UX & Product Designer',
-    description:
-      'A daily companion to help you practice Stoic principles through tasks, quotes, and journaling.',
-    thumbnail: stoicThumb,
-    link: '#',
-  },
-  {
-    id: 2,
-    title: 'Travel-lore',
-    role: 'UI/UX & Product Designer',
-    description:
-      'Travel meets storytelling — share locations with memories and personal narratives.',
-    thumbnail: travelThumb,
-    link: '#',
-  },
-];
+  useEffect(() => {
+    async function fetchProjects() {
+      const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .order('id', { ascending: false });
 
-export default function Ideas() {
+      if (error) {
+        console.error('Supabase Error:', error.message);
+      } else {
+        setProjects(onlyRecent ? data.slice(0, 2) : data);
+      }
+    }
+
+    fetchProjects();
+  }, [onlyRecent]);
+
   return (
     <section className="ideas-section">
       <div className="ideas-overlay">
         <h2 className="ideas-title">Ideas</h2>
 
         <div className="ideas-grid">
-          {ideas.map((idea) => (
-            <div className="idea-card" key={idea.id}>
-              {/* External icon pinned absolutely */}
+          {projects.map((project) => (
+            <div className="idea-card" key={project.id}>
+              {/* External links */}
               <a
-  href={idea.link}
-  target="_blank"
-  rel="noreferrer"
-  className="idea-float-icon"
->
-  <FiExternalLink />
-</a>
+                href={project.deploy}
+                target="_blank"
+                rel="noreferrer"
+                className="idea-float-icon"
+              >
+                <FiExternalLink />
+              </a>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="idea-float-icon"
+                style={{ right: '52px', background: 'white', color: '#333' }}
+              >
+                <FiGithub />
+              </a>
 
+              {/* Thumbnail */}
               <img
-                src={idea.thumbnail}
-                alt={idea.title}
+                src={`/assets/${project.thumbnail}.png`}
+                onError={(e) => {
+                  e.target.src = '/assets/default.png';
+                }}
+                alt={project.project_name}
                 className="idea-thumbnail"
               />
+
+              {/* Text details */}
               <div className="idea-details">
-                <h3>{idea.title}</h3>
-                <p className="idea-role">Role: {idea.role}</p>
+                <h3>{project.project_name}</h3>
+                <p className="idea-role">Role: {project.role}</p>
                 <hr className="idea-divider" />
-                <p className="idea-desc">{idea.description}</p>
+                <p className="idea-desc">{project.subtitle}</p>
               </div>
             </div>
           ))}
         </div>
 
-       <div className="explore-container">
-  <p className="explore-more">Explore All Projects…</p>
-  <span className="explore-icon">
-    <FiExternalLink />
-  </span>
-</div>
-
-</div>
-
-
+        {/* Explore more */}
+        <div className="explore-container">
+          <p className="explore-more">Explore All Projects…</p>
+          <Link to="/ideas" className="explore-icon">
+            <FiExternalLink />
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }
